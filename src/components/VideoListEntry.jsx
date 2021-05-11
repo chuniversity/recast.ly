@@ -8,11 +8,11 @@ var VideoListEntry = (props) => (
     </div>
     <div className="media-body">
       {/* snippet.title */}
-      <div className="video-list-entry-title">{props.video.snippet.title}</div>
+      <div onClick={(e) => props.onClickHandler(props.video)} className="video-list-entry-title">{props.video.snippet.title}</div>
       {/* snippet.description */}
       <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
-  </div>
+  </div >
 );
 
 // PropTypes tell other developers what `props` a component expects
