@@ -20,7 +20,6 @@ class App extends React.Component {
 
   //click handler
   onVideoEntryListClick(video) {
-    console.log('you clicked!')
     this.setState({
       video: video
     });
