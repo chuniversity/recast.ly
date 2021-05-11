@@ -1,42 +1,48 @@
-// import React from 'React';
+
 import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
 import VideoListEntry from './VideoListEntry.js';
-import exampleVideoData from './data/exampleVideoData.js';
+import exampleVideoData from '../data/exampleVideoData.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     // add state
-    this.state = { videos: exampleVideoData };
+    this.state = {
+      videos: exampleVideoData,
+      video: exampleVideoData[0],
+    };
 
   }
 
   render() {
     return (
-      <VideoList videoData={this.state.videos} />
-      //
-      // <div>
-      //   <nav className="navbar">
-      //     <div className="col-md-6 offset-md-3">
-      //       <div><h5><em>search</em> view goes here</h5></div>
-      //     </div>
-      //   </nav>
-      //   <div className="row">
-      //     <div className="col-md-7">
-      //       <div><h5><em>videoPlayer</em> view goes here</h5></div>
-      //     </div>
-      //     <div className="col-md-5">
-      //       <div><h5><em>videoList</em> view goes here</h5></div>
-      //     </div>
-      //   </div>
-      // </div>
+      <div>
+        <nav className="navbar">
+          <div className="col-md-6 offset-md-3">
+            <div><h5><em>search</em> view goes here</h5></div>
+          </div>
+        </nav>
+        <div className="row">
+          <div className="col-md-7">
+            <div>
+              <VideoPlayer video={this.state.video} />
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div>
+              <VideoList videos={this.state.videos} />
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
+//
 // var App = () => (
 // <div>
 //   <nav className="navbar">
